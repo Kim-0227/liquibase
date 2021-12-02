@@ -37,7 +37,7 @@
     </changeSet>
 
     <changeSet id="2021-12-02-02" author="kim">
-        <comment>init schema</comment>
+        <comment>add column age to user_info</comment>
         <addColumn tableName="user_info">
             <column name="age" type="int" afterColumn="password" >
                 <constraints nullable="false"/>
@@ -46,7 +46,7 @@
     </changeSet>
 
     <changeSet id="2021-12-02-03" author="kim">
-        <comment>init schema</comment>
+        <comment>drop column age from user_info</comment>
         <dropColumn tableName="user_info">
             <column name="age" type="int">
                 <constraints nullable="false"/>
