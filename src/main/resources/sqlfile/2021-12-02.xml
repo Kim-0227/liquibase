@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="2021-12-02" value="true" dbms="h2"/>
+    <changeSet id="2021-12-02-01" author="kim">
+        <comment>create user_info table</comment>
+        <createTable tableName="user_info">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(20)">
+                <constraints nullable="false" uniqueConstraintName="username"/>
+            </column>
+            <column name="password" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="varchar(11)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sex" type="varchar(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="java.util.Date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="update_time" type="java.util.Date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2021-12-02-02" author="kim">
+        <comment>init schema</comment>
+        <addColumn tableName="user_info">
+            <column name="age" type="int" afterColumn="password" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="2021-12-02-03" author="kim">
+        <comment>init schema</comment>
+        <dropColumn tableName="user_info">
+            <column name="age" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </dropColumn>
+    </changeSet>
+</databaseChangeLog>
