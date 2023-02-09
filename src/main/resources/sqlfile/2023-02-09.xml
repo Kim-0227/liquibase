@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="1" author="kim">
+        <dropTable tableName="old_table"/>
+        <insert tableName="user_info">
+            <column name= "username">Kim</column>
+            <column name= "password">Kim</column>
+            <column name= "email">jinriguang163@163.com</column>
+            <column name= "phone">15040515124</column>
+            <column name= "sex">man</column>
+            <column name= "create_time">now()</column>
+            <column name= "update_time">now()</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
