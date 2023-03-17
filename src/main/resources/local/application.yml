@@ -1,0 +1,13 @@
+spring:
+  liquibase:
+    change-log: classpath:liquibase/master.xml
+    user: root
+    password: 123456
+    enabled: true
+    drop-first: false
+    url: jdbc:mysql://127.0.0.1:3306/spring?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: kim
+    password: 123456341122
